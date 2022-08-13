@@ -23,7 +23,7 @@ source (pyenv init - | psub)
 alias rm "trash"
 
 # 別名設定
-abbr mv "mv -it"
+abbr mv "mv -iv"
 abbr ufw '/usr/libexec/ApplicationFirewall/socketfilterfw --listapps'
 
 # 関数定義
