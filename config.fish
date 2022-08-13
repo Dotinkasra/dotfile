@@ -28,4 +28,4 @@ abbr mv "mv -iv"
 abbr ufw '/usr/libexec/ApplicationFirewall/socketfilterfw --listapps'
 
 # 関数定義
-command_not_found_handler
+# command_not_found_handler
