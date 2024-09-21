@@ -1,6 +1,6 @@
 packadd vim-jetpack
 call jetpack#begin()
-call jetpack#add('tani/vim-jetpack', {'opt': 1}) 
+call jetpack#add('tani/vim-jetpack', {'opt': 1})
 call jetpack#add('https://github.com/dense-analysis/ale')
 call jetpack#add('junegunn/fzf.vim')
 call jetpack#add('junegunn/fzf', { 'do': {-> fzf#install()} })
@@ -8,6 +8,9 @@ call jetpack#add('neoclide/coc.nvim', { 'branch': 'release' })
 call jetpack#add('neoclide/coc.nvim', { 'branch': 'master', 'do': 'yarn install --frozen-lockfile' })
 call jetpack#add('tomasr/molokai')
 call jetpack#add('itchyny/lightline.vim')
+call jetpack#add('joshdick/onedark.vim')
+call jetpack#add('Yggdroot/indentLine')
+
 
 call jetpack#end()
 
@@ -32,6 +35,8 @@ set cursorline
 set wildmenu
 set history=500
 set backspace=indent,eol,start
+set completeopt=menuone,noinsert
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 colorscheme elflord
 syntax enable
@@ -46,3 +51,4 @@ set ruler " ステータスラインの右側にカーソルの現在位置を�
 call jetpack#add('Yggdroot/indentLine')
 "----------------------------------------------------------
 filetype plugin indent on
+colorscheme onedark

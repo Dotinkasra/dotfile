@@ -1,31 +1,51 @@
-# 環境変数の設定
-# set PATH $HOME/.pyenv/shims /usr/local/bin /usr/bin $PATH
-# set PATH $HOME/.pyenv/bin $PATH
+if status is-interactive
+    # Commands to run in interactive sessions can go here
+end
 
-set PATH /usr/local/opt/sbt@0.13/bin $PATH
-set PATH $HOME/bin/realesrgan-ncnn-vulkan $PATH
+# path
+fish_add_path /usr/bin
+fish_add_path /opt/homebrew/bin 
+fish_add_path /opt/homebrew/sbin
+fish_add_path $HOME/bin 
+fish_add_path $HOME/bin/shellscript 
+fish_add_path $HOME/.local/bin 
+fish_add_path /opt/homebrew/opt/mysql-client/bin
+fish_add_path /opt/homebrew/mysql-client/bin
 
-set PATH /opt/homebrew/bin $PATH
+# tools
+fish_add_path $HOME/bin/realesrgan-ncnn-vulkan 
+fish_add_path $HOME/bin/realcugan-ncnn-vulkan 
+fish_add_path $HOME/bin/dain-ncnn-vulkan 
+fish_add_path $HOME/.local/share/yaskkserv2
+fish_add_path -m $HOME/bin/ffmpeg/bin 
 
-set PATH /opt/homebrew/opt/openssl@1.1/bin $PATH
-set PATH /opt/homebrew/opt/tcl-tk/bin $PATH
+# programming
+set -gx GRADLE_HOME $HOME/bin/gradle
+fish_add_path $GRADLE_HOME/bin 
 
-set PATH ~/.local/bin $PATH
-set PATH ~/bin $PATH
+fish_add_path $HOME/.goenv/bin 
+fish_add_path /usr/local/opt/node/bin 
+fish_add_path $HOME/.nimble/bin 
 
-set PATH ~/.nimble/bin $PATH
+fish_add_path $HOME/.cargo/bin 
+set -gx RUSTC_WRAPPER $HOME/.cargo/bin/sccache
 
-set -x SSLKEYLOGFILE ~/.ssl-key.log $SSLKEYLOGFILE
+# asdf
+source /opt/homebrew/opt/asdf/libexec/asdf.fish
+set -gx JAVA_HOME $HOME/.asdf/plugins/java/set-java-home.fish
 
-# source (pyenv init - | psub)
+# env
+set icloud /Users/twemu/Library/Mobile\ Documents/com~apple~CloudDocs/
+set -gx SSLKEYLOGFILE $HOME/.ssl-key.log 
+set -gx CHROME_EXECUTABLE "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
-# エイリアス設定
-alias rm "trash"
-alias brew="env PATH=(string replace (pyenv root)/shims '' \"\$PATH\") brew"
+# abbr
+abbr -a real 'realesrgan-ncnn-vulkan -m /Users/twemu/bin/realesrgan-ncnn-vulkan/models -n realesrgan-x4plus-anime'
+abbr -a mv 'mv -iv'
+abbr -a veracrypt '/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt --text'
+abbr -a L --position anywhere --set-cursor "% | less"
+abbr -a yt --set-cursor 'yt-dlp -f % --embed-thumbnail --add-metadata'
+abbr -a nohup --set-cursor 'nohup % > /dev/null 2>&1 &'
 
-# 別名設定
-abbr mv "mv -iv"
-abbr ufw '/usr/libexec/ApplicationFirewall/socketfilterfw --listapps'
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-# 関数定義
-# command_not_found_handler
