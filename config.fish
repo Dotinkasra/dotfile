@@ -35,7 +35,7 @@ source /opt/homebrew/opt/asdf/libexec/asdf.fish
 set -gx JAVA_HOME $HOME/.asdf/plugins/java/set-java-home.fish
 
 # env
-set icloud #HOME/Library/Mobile\ Documents/com~apple~CloudDocs/
+set icloud $HOME/Library/Mobile\ Documents/com~apple~CloudDocs/
 set -gx SSLKEYLOGFILE $HOME/.ssl-key.log 
 set -gx CHROME_EXECUTABLE "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
