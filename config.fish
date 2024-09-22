@@ -40,12 +40,12 @@ set -gx SSLKEYLOGFILE $HOME/.ssl-key.log
 set -gx CHROME_EXECUTABLE "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
 # abbr
-abbr -a real 'realesrgan-ncnn-vulkan -m $HOME/bin/realesrgan-ncnn-vulkan/models -n realesrgan-x4plus-anime'
-abbr -a mv 'mv -iv'
-abbr -a veracrypt '/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt --text'
+abbr -a real "realesrgan-ncnn-vulkan -m $HOME/bin/realesrgan-ncnn-vulkan/models -n realesrgan-x4plus-anime"
+abbr -a mv "mv -iv"
+abbr -a veracrypt "/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt --text"
 abbr -a L --position anywhere --set-cursor "% | less"
-abbr -a yt --set-cursor 'yt-dlp -f % --embed-thumbnail --add-metadata'
-abbr -a nohup --set-cursor 'nohup % > /dev/null 2>&1 &'
+abbr -a yt --set-cursor "yt-dlp -f % --embed-thumbnail --add-metadata"
+abbr -a nohup --set-cursor "nohup % > /dev/null 2>&1 &"
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
