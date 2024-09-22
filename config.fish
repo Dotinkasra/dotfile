@@ -35,12 +35,12 @@ source /opt/homebrew/opt/asdf/libexec/asdf.fish
 set -gx JAVA_HOME $HOME/.asdf/plugins/java/set-java-home.fish
 
 # env
-set icloud /Users/twemu/Library/Mobile\ Documents/com~apple~CloudDocs/
+set icloud #HOME/Library/Mobile\ Documents/com~apple~CloudDocs/
 set -gx SSLKEYLOGFILE $HOME/.ssl-key.log 
 set -gx CHROME_EXECUTABLE "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
 # abbr
-abbr -a real 'realesrgan-ncnn-vulkan -m /Users/twemu/bin/realesrgan-ncnn-vulkan/models -n realesrgan-x4plus-anime'
+abbr -a real 'realesrgan-ncnn-vulkan -m $HOME/bin/realesrgan-ncnn-vulkan/models -n realesrgan-x4plus-anime'
 abbr -a mv 'mv -iv'
 abbr -a veracrypt '/Applications/VeraCrypt.app/Contents/MacOS/VeraCrypt --text'
 abbr -a L --position anywhere --set-cursor "% | less"
